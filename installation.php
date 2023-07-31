@@ -19,3 +19,6 @@ $ php -f my_script.php
 
 * Pass the PHP code to execute directly on the command line.
 $ php -r 'print_r(get_defined_constants());'
+
+* Check php version
+$ echo 'PHP version: ' . phpversion();
