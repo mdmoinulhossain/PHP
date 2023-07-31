@@ -42,6 +42,7 @@ In PHP 7, a new feature called strict typing was introduced. Strict typing allow
 
 Example:
 
+```
 <?php
 $age = 30; // $age is an integer
 $age = "thirty"; // $age is now a string
@@ -53,3 +54,4 @@ $result = $number1 + $number2; // PHP automatically converts $number1 from strin
 
 echo $result; // Output: 15
 ?>
+```
