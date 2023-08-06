@@ -43,6 +43,49 @@ foreach($age as $key => $value){
 
 
 // **************************************************************************** Multidimensional Arrays
+#  sometimes you want to store values with more than one key. For this, we have multidimensional arrays.
+/* Two-dimensional Arrays(an array of array).
+each element of the outer array holds another array as its value. */
+echo "<br/>";
+$cars = array (
+  array("Volvo",22,18),
+  array("BMW",15,13),
+  array("Saab",5,2),
+  array("Land Rover",17,15)
+);
+
+echo $cars[0][1]; // Output: 22
+
+// By loop
+for ($row = 0; $row < 4; $row++) {
+  echo "<p><b>Row number $row</b></p>";
+  echo "<ul>";
+  for ($col = 0; $col < 3; $col++) {
+    echo "<li>".$cars[$row][$col]."</li>";
+  }
+  echo "</ul>";
+}
 
 
+
+
+/* Three-dimensional Arrays(an array of array of array). */
+$threeDimensionalArray = array(
+  // Layer 1
+  array(
+      // Layer 2 - Row 1
+      array(1, 2, 3),
+      // Layer 2 - Row 2
+      array(4, 5, 6),
+  ),
+  // Layer 1
+  array(
+      // Layer 2 - Row 1
+      array(7, 8, 9),
+      // Layer 2 - Row 2
+      array(10, 11, 12),
+  ),
+);
+
+print_r($threeDimensionalArray);
 ?>
