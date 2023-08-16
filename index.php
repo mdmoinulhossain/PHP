@@ -32,6 +32,9 @@ echo "hello world" . "<br/><br/>".
     <li>
         <a href='./Study/Basic/Array.php' target='_blank'>Array.php</a>
     </li>
+    <li>
+        <a href='./Study/Basic/SuperGlobals.php' target='_blank'>SuperGlobals.php</a>
+    </li>
 </ul>";
 
 ?>
