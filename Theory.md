@@ -55,3 +55,7 @@ $result = $number1 + $number2; // PHP automatically converts $number1 from strin
 echo $result; // Output: 15
 ?>
 ```
+
+
+* require will produce a fatal error (E_COMPILE_ERROR) and stop the script
+* include will only produce a warning (E_WARNING) and the script will continue
