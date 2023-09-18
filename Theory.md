@@ -7,7 +7,8 @@
 
 # echo
 
-- can takes multiple parameter/arguments while `print` takes one, and it's faster than `print`.
+- `echo` can takes multiple parameter/arguments while `print` takes one, and it's faster than `print`.
+- The `print_r()` function prints the information about a variable in a more human-readable way(by array).
 
 # Rules for PHP variables:
 
