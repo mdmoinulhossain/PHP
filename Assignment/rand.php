@@ -16,6 +16,21 @@
             font-size: 20px;
             font-weight: bold;
         }
+
+        a {
+            background-color: #4c49d0;
+            color: #fff;
+            font-size: 16px;
+            padding: 5px;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        a:hover {
+            background-color: #bdb2ff;
+            color: #000;
+        }
     </style>
 </head>
 
@@ -60,7 +75,7 @@
     $randomIndex = array_rand($data);
 
     // Display the data corresponding to the random index
-    echo $data[$randomIndex];
+    echo "$data[$randomIndex] <br/> <a href='?'>Refresh</a>";
     ?>
 </body>
 
