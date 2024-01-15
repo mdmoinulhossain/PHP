@@ -19,10 +19,11 @@ function FileDisplay($directory, array $exclude = array('.', '..'))
     }
 
     while (($readDirectory = readdir($openDirectory)) !== false) {
+        // Remove '.' , '..' from directory
         if (in_array($readDirectory, $exclude)) {
             continue;
         }
-
+        // Display files
         $files[] = $directory . '/' . $readDirectory;
     }
 
