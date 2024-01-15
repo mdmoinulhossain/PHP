@@ -24,7 +24,7 @@ if (!$images) {
     <br />
     <form action="./FileUpload.php" method="post" enctype="multipart/form-data">
         Select image to upload:
-        <input type="file" name="file-upload" id="fileToUpload">
+        <input type="file" name="file-upload[]" id="fileToUpload" multiple>
         <input type="submit" value="Upload Image" name="submit">
     </form>
     <br />
