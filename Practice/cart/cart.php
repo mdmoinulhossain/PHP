@@ -8,6 +8,17 @@ $unitPrice = $_SESSION["UnitPrice"];
 $price = $_SESSION["price"];
 
 
+if (isset($_POST['submit'])) {
+    $updatePrice = $_POST['prc'];
+    $updateQuantity = $_POST['qnt'];
+
+    $_SESSION["quantity"] = "$updateQuantity";
+    $_SESSION["price"] = "$updatePrice";
+
+    // Reload the page to display updated data
+    echo '<script>window.location.href = "' . $_SERVER['PHP_SELF'] . '";</script>';
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -36,13 +47,18 @@ $price = $_SESSION["price"];
         .cart-price {
             margin-top: 10px;
         }
+
+        .update-btn {
+            margin-top: 15px;
+            display: none;
+        }
     </style>
 </head>
 
 <body>
 
     <section class="cart-body">
-        <aside class="cart">
+        <form class="cart" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
             <div class="cart-quantity">
                 <span class="btn" id="decrease-btn" onclick="decreaseQuantity()">-</span>
                 <input type="number" id="quantityInput" name="qnt" value="<?php echo $quantity; ?>" />
@@ -51,7 +67,9 @@ $price = $_SESSION["price"];
             <div class="cart-price">
                 <input type="number" min="1" id="priceInput" name="prc" value="<?php echo $price; ?>" />
             </div>
-        </aside>
+
+            <button name="submit" type="submit" class="update-btn">Update Cart</button>
+        </form>
         <aside class="current-value">
             <span>Session Data:</span>
             <p>Quantity: <?php echo $quantity; ?></p>
@@ -64,6 +82,8 @@ $price = $_SESSION["price"];
     <script>
         var increaseBtn = document.getElementById("increase-btn");
         var decreaseBtn = document.getElementById("decrease-btn");
+        var updateButtons = document.getElementsByClassName("update-btn");
+
 
         function increaseQuantity() {
             let qty = parseInt(document.getElementById("quantityInput").value);
@@ -72,6 +92,13 @@ $price = $_SESSION["price"];
 
             let price = parseFloat(<?php echo $unitPrice; ?>) * qty;
             document.getElementById("priceInput").value = price.toFixed();
+
+
+
+            // Loop through all found buttons and set their display property to 'block'
+            for (var i = 0; i < updateButtons.length; i++) {
+                updateButtons[i].style.display = 'block';
+            }
         }
 
         function decreaseQuantity() {
@@ -84,6 +111,11 @@ $price = $_SESSION["price"];
             let unitPrice = parseFloat(<?php echo $unitPrice; ?>);
             let price = unitPrice * qty;
             document.getElementById("priceInput").value = price.toFixed();
+
+            // Loop through all found buttons and set their display property to 'block'
+            for (var i = 0; i < updateButtons.length; i++) {
+                updateButtons[i].style.display = 'block';
+            }
         }
     </script>
 </body>
