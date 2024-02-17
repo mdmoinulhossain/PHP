@@ -80,8 +80,6 @@ if (isset($_POST['submit'])) {
     </section>
 
     <script>
-        var increaseBtn = document.getElementById("increase-btn");
-        var decreaseBtn = document.getElementById("decrease-btn");
         var updateButtons = document.getElementsByClassName("update-btn");
 
 
