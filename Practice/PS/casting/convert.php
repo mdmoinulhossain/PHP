@@ -45,5 +45,5 @@ $items = [1, 2, 3];
 $isArrToStr = (string)$items;
 
 echo $isArrToStr . '<br/>'; // Output: Notice (Array to string conversion)
-// PHP does not support direct array-to-string casting. You can use implode() instead
+// PHP does not support direct array-to-string casting. You can use implode() instead. Join array elements with a string.
 echo implode(",", $items); // Output: 1,2,3
